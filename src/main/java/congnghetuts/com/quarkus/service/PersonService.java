@@ -4,7 +4,6 @@ package congnghetuts.com.quarkus.service;
 import congnghetuts.com.quarkus.http.HTTPResponse;
 import congnghetuts.com.quarkus.model.Person;
 import congnghetuts.com.quarkus.model.PersonVO;
-import io.quarkus.narayana.jta.runtime.TransactionConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;

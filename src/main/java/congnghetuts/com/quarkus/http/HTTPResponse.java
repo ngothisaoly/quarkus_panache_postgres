@@ -15,8 +15,8 @@ public class HTTPResponse {
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(createContentResponse(500, message, data)).build();
     }
 
-    private static HTTPContentRespone createContentResponse(Integer code, String message, Object data) {
-        HTTPContentRespone httpContentRespone = new HTTPContentRespone();
+    private static HTTPContentResponeCus createContentResponse(Integer code, String message, Object data) {
+        HTTPContentResponeCus httpContentRespone = new HTTPContentResponeCus();
         httpContentRespone.code = code;
         httpContentRespone.message = message;
         httpContentRespone.data = data;

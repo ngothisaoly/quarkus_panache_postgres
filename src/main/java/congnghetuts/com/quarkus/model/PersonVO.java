@@ -1,5 +1,8 @@
 package congnghetuts.com.quarkus.model;
 
+import javax.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class PersonVO {
     private String name;
     private String email;
