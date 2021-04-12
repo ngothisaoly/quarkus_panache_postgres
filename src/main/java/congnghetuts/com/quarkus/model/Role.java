@@ -17,6 +17,6 @@ public class Role extends PanacheEntityBase {
 
     private String description;
 
-    @ManyToMany(mappedBy = "roleSet")
-    private Set<Employee> users;
+  //  @ManyToMany(mappedBy = "roleSet")
+   // private Set<Employee> users;
 }
