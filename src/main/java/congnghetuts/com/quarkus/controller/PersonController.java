@@ -27,6 +27,12 @@ public class PersonController {
         return personService.findNameIn(names);
     }
 
+    @GET
+    @Path("/findByNameAndEmail/{name}/{email}")
+    public Person findByNameAndEmail(@PathParam("name") String name, @PathParam("email") String email) {
+        return personService.findByNameAndEmail(name, email);
+    }
+
     @POST
     public Response create(PersonVO person) {
         return personService.create(person);

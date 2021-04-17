@@ -80,4 +80,11 @@ public class PersonService {
         PanacheQuery<Person> personPanacheQuery = Person.find("name in :name", Parameters.with("name", names));
         return personPanacheQuery.list();
     }
+
+    public Person findByNameAndEmail(String name, String email) {
+        PanacheQuery<Person> personPanacheQuery = Person.find("name = :name and email = :email",
+                Parameters.with("name", name).and("email", email)
+                );
+        return personPanacheQuery.firstResult();
+    }
 }
