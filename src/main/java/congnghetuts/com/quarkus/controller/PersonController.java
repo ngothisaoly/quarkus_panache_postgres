@@ -22,6 +22,12 @@ public class PersonController {
     }
 
     @POST
+    @Path("/name-in")
+    public List<Person> getByNameIn(List<String> names) {
+        return personService.findNameIn(names);
+    }
+
+    @POST
     public Response create(PersonVO person) {
         return personService.create(person);
     }

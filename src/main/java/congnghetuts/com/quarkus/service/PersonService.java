@@ -4,6 +4,8 @@ package congnghetuts.com.quarkus.service;
 import congnghetuts.com.quarkus.http.HTTPResponse;
 import congnghetuts.com.quarkus.model.Person;
 import congnghetuts.com.quarkus.model.PersonVO;
+import io.quarkus.hibernate.orm.panache.PanacheQuery;
+import io.quarkus.panache.common.Parameters;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
@@ -72,5 +74,10 @@ public class PersonService {
         } catch (Exception ex) {
             return HTTPResponse.serverError("Fail to delete", id);
         }
+    }
+
+    public List<Person> findNameIn(List<String> names) {
+        PanacheQuery<Person> personPanacheQuery = Person.find("name in :name", Parameters.with("name", names));
+        return personPanacheQuery.list();
     }
 }
